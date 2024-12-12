@@ -10,31 +10,30 @@ import Footer from "@/components/Footer.astro";
 ---
 
 <script is:inline>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      const theme = localStorage.getItem("theme");
-      // Validación simple sin aserción de tipo
-      return theme === "dark" || theme === "light" ? theme : "light";
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
-
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-  if (typeof localStorage !== "undefined") {
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-  }
-</script>
+	const getThemePreference = () => {
+	  // Primero verifica si hay un tema guardado en localStorage
+	  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+		const theme = localStorage.getItem("theme");
+		return theme === "dark" || theme === "light" ? theme : "dark"; // Cambiado el fallback a "dark"
+	  }
+	  // Si no hay tema guardado, retorna "dark" por defecto
+	  return "dark";
+	};
+  
+	const isDark = getThemePreference() === "dark";
+	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  
+	if (typeof localStorage !== "undefined") {
+	  const observer = new MutationObserver(() => {
+		const isDark = document.documentElement.classList.contains("dark");
+		localStorage.setItem("theme", isDark ? "dark" : "light");
+	  });
+	  observer.observe(document.documentElement, {
+		attributes: true,
+		attributeFilter: ["class"],
+	  });
+	}
+  </script>
 
 <Layout>
   <main class="flex flex-col h-full justify-start items-center">
