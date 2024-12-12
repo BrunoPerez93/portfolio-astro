@@ -1,12 +1,5 @@
 ---
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
-import ImageComponent from "./ImageComponent.astro";
+import ProjectCard from "./ProjectCard.astro";
 import {
   adwise,
   coffee,
@@ -18,6 +11,72 @@ import {
   workshop,
   worldRank,
 } from "@/assets";
+
+const projects = [
+  {
+    href: "https://workshop-roan.vercel.app/",
+    title: "Workshop",
+    description: "Next js + Tailwind + MongoDB + Docker",
+    imageSrc: workshop,
+    imageAlt: "Workshop project",
+  },
+  {
+    href: "https://adwise-nextjs.vercel.app/",
+    title: "Adwise",
+    description: "Next js + Tailwind",
+    imageSrc: adwise,
+    imageAlt: "Adwise project",
+  },
+  {
+    href: "https://world-rank-kohl.vercel.app/",
+    title: "World Rank",
+    description: "React js + Tailwind + API + Docker",
+    imageSrc: worldRank,
+    imageAlt: "World Rank project",
+  },
+  {
+    href: "https://qr-generator-coral.vercel.app/",
+    title: "QR Generator",
+    description: "Next js + Tailwind + MongoDB",
+    imageSrc: qr,
+    imageAlt: "QR project",
+  },
+  {
+    href: "https://music-api-call.vercel.app/",
+    title: "Music",
+    description: "Next js + Shadcn/ui + Tailwind + API",
+    imageSrc: music,
+    imageAlt: "Music project",
+  },
+  {
+    href: "https://random-quots.vercel.app/",
+    title: "Random Quotes",
+    description: "React js + Tailwind + API + Docker",
+    imageSrc: quotes,
+    imageAlt: "Random Quotes project",
+  },
+  {
+    href: "https://gifs-app-ten-omega.vercel.app/",
+    title: "Gifs",
+    description: "React js + Vite + API",
+    imageSrc: gif,
+    imageAlt: "Gif project",
+  },
+  {
+    href: "https://coffee-listing-theta.vercel.app/",
+    title: "Coffee Listing",
+    description: "React js + Tailwind + API",
+    imageSrc: coffee,
+    imageAlt: "Coffee project",
+  },
+  {
+    href: "https://pagination-gold-nu.vercel.app/",
+    title: "Pagination",
+    description: "React js + Vite + Tailwind + API",
+    imageSrc: pagination,
+    imageAlt: "Pagination project",
+  },
+];
 ---
 
 <section
@@ -28,154 +87,7 @@ import {
     Projects
   </h2>
 
-  <div class="grid grid-col-1 md:grid-cols-3 gap-5 my-5 p-5">
-    <a href="https://workshop-roan.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Workshop</CardTitle>
-          <CardDescription>Next js + Tailwind + MongoDB + Docker</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={workshop}
-            alt="Workshop project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://adwise-nextjs.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Adwise</CardTitle>
-          <CardDescription>Next js + Tailwind</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={adwise}
-            alt="Adwise project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://world-rank-kohl.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>World Rank</CardTitle>
-          <CardDescription>React js + Tailwind + API + Docker</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={worldRank}
-            alt="World Rank project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://qr-generator-coral.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>QR Generator</CardTitle>
-          <CardDescription>Next js + Tailwind + MongoDB</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent src={qr} alt="QR project" width={300} height={200} />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://music-api-call.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Music</CardTitle>
-          <CardDescription>Next js + Shadcn/ui + Tailwind + API</CardDescription
-          >
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={music}
-            alt="Music project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://random-quots.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Random Quotes</CardTitle>
-          <CardDescription>React js + Tailwind + API + Docker</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={quotes}
-            alt="Random Quotes project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://gifs-app-ten-omega.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Gifs</CardTitle>
-          <CardDescription>React js + Vite + API</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={gif}
-            alt="Gif project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://coffee-listing-theta.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Coffee Listing</CardTitle>
-          <CardDescription>React js + Tailwind + API</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={coffee}
-            alt="Coffee project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
-
-    <a href="https://pagination-gold-nu.vercel.app/" target="_blank">
-      <Card className="h-[380px] hover:bg-gray-500">
-        <CardHeader>
-          <CardTitle>Pagination</CardTitle>
-          <CardDescription>React js + Vite + Tailwind + API</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ImageComponent
-            src={pagination}
-            alt="Pagination project"
-            width={300}
-            height={200}
-          />
-        </CardContent>
-      </Card>
-    </a>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 p-5">
+    {projects.map((project) => <ProjectCard {...project} />)}
   </div>
 </section>
