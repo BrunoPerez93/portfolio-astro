@@ -1,0 +1,14 @@
+---
+// LinkNavbar.astro
+export interface Props {
+  href: string;
+  name: string;
+  className?: string;
+}
+
+const { href, name, className = "" } = Astro.props;
+---
+
+<a class={className} href={href}>
+  {name}
+</a>

@@ -1,0 +1,58 @@
+---
+import LinkComponent from './LinkComponent.astro';
+import ImageComponent from './ImageComponent.astro';
+import github from '@/assets/github-white.svg';
+import gmail from '@/assets/gmail-white.svg';
+import linkedin from '@/assets/linkedin-white.svg';
+
+interface Props {
+  // Define props si las necesitas
+}
+---
+
+<section
+  id="about"
+  class="flex flex-col justify-center items-center md:h-screen h-full pb-5 bg-slate-900 w-full text-white"
+>
+  <div class="my-5 space-y-3 md:w-1/2 w-full px-5 text-center md:text-start">
+    <h1 class="text-3xl md:text-5xl font-bold">Hi, I'm Bruno</h1>
+    <h1 class="text-3xl md:text-5xl font-bold relative w-auto text-blue-400 hover:text-[#E7983B]">
+      Front-End Developer
+    </h1>
+  </div>
+
+  <div class="flex justify-center md:justify-start items-center my-5 space-x-10 md:w-1/2 w-full px-5">
+    <LinkComponent href="https://github.com/BrunoPerez93">
+      <ImageComponent 
+        src={github} 
+        alt="Logo Github" 
+        width={50} 
+        height={50} 
+      />
+    </LinkComponent>
+    <LinkComponent href="https://www.linkedin.com/in/bruno-perez-07079324a">
+      <ImageComponent 
+        src={linkedin} 
+        alt="Logo Linkedin" 
+        width={50} 
+        height={50}
+      />
+    </LinkComponent>
+    <LinkComponent href="mailto:brunoperez24793@gmail.com?subject=Hello&body=I wanted to reach out to you regarding...">
+      <ImageComponent 
+        src={gmail} 
+        alt="Logo Gmail" 
+        width={50} 
+        height={50}
+      />
+    </LinkComponent>
+  </div>
+
+  <div class="md:w-1/2 w-full flex flex-col justify-center items-start text-2xl px-5 space-y-3">
+    <p>Front-End Developer trained and creative in web development.</p>
+    <p>
+      Passionate about creating intuitive and functional interfaces to
+      improve user experience.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import { github, gmail, linkedin } from "@/assets";
+import ImageComponent from "./ImageComponent.astro";
+import LinkComponent from "./LinkComponent.astro";
+---
+
+
+
+    <footer class="flex justify-between items-center bg-slate-900 w-full text-white p-5">
+      <p class="text-xl md:text-3xl font-bold">Bruno Pérez</p>
+      <div class="flex flex-col space-y-2 text-center text-[#E7983B]">
+        <p class="text-xl text-white">Links</p>
+        <div class="flex flex-col md:flex-row md:space-x-5  justify-center md:items-start items-center">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:space-x-5  justify-center items-center">
+        <LinkComponent href="https://github.com/BrunoPerez93">
+          <ImageComponent
+            src={github}
+            alt="Logo Github"
+            width={50}
+            height={50}
+          />
+        </LinkComponent>
+        <LinkComponent href="https://www.linkedin.com/in/bruno-perez-07079324a">
+          <ImageComponent
+            src={linkedin}
+            alt="Logo Linkedin"
+            width={50}
+            height={50}
+          />
+        </LinkComponent>
+
+        <LinkComponent href="mailto:brunoperez24793@gmail.com?subject=Hello&body=I wanted to reach out to you regarding...">
+          <ImageComponent src={gmail} alt="Logo Gmail" width={50} height={50} />
+        </LinkComponent>
+      </div>
+    </footer>
+

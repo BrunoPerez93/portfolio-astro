@@ -1,0 +1,11 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<div class="bg-black hover:bg-gray-400 p-5 rounded-md">
+  <p>{name}</p>
+</div>
